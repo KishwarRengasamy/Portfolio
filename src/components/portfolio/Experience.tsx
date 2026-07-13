@@ -3,19 +3,20 @@ import { SectionHeader } from "./SectionHeader";
 
 const items = [
   {
-    when: "2025 — Present",
-    role: "Solar Engineering Intern",
-    org: "Voltaura Technologies Inc.",
-    body: "Working on solar engineering and renewable-energy systems — from field analysis to system-level design. Bridging the EEE fundamentals with real deployments.",
-    tags: ["Solar", "Power Systems", "Field Engineering"],
+    when: "July 2026 — Present",
+    role: "Solar EPC Intern",
+    org: "Voltaura Technologies Pvt. Ltd.",
+    body:
+      "Working on utility-scale and rooftop Solar EPC (Engineering, Procurement & Construction) projects — contributing to solar PV system design, site surveys, electrical layouts, component selection, and project execution. Assisting with performance analysis, installation planning, quality assurance, and commissioning while gaining practical exposure to renewable energy systems and industry standards.",
+    tags: ["Solar PV", "EPC", "Site Surveys", "Commissioning", "Renewables"],
   },
   {
-    when: "Dec 2025 — May 2026 (pending confirmation)",
-    role: "VLSI Design Intern",
-    org: "To be confirmed",
-    body: "Digital design internship focused on RTL, Verilog/SystemVerilog and UVM-based verification flows.",
-    tags: ["Verilog", "SystemVerilog", "UVM", "RTL"],
-    pending: true,
+    when: "Dec 2025 — May 2026",
+    role: "VLSI Design Engineering Intern",
+    org: "Taras Systems and Solutions Pvt. Ltd.",
+    body:
+      "Completed a 6-month VLSI Design internship focused on digital IC design and verification. Gained hands-on experience with Verilog, SystemVerilog, UVM, and digital design methodologies, while developing industry-oriented and individual projects involving RTL design, functional verification, simulation, and debugging.",
+    tags: ["Verilog", "SystemVerilog", "UVM", "RTL", "Verification"],
   },
 ];
 
@@ -57,11 +58,6 @@ export function Experience() {
                       {t}
                     </span>
                   ))}
-                  {it.pending && (
-                    <span className="rounded-full border border-brand/50 bg-brand/10 text-brand px-3 py-1 text-[11px] tracking-wide">
-                      Pending confirmation
-                    </span>
-                  )}
                 </div>
               </motion.div>
             ))}
