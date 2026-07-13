@@ -18,9 +18,9 @@ function Index() {
       <Nav />
       <Hero />
       <About />
-      <Projects />
       <Skills />
       <Experience />
+      <Projects />
       <Achievements />
       <Contact />
     </main>
