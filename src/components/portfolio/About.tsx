@@ -29,10 +29,10 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
 }
 
 const stats = [
-  { n: 8, s: "+", label: "Projects shipped" },
-  { n: 5, s: "+", label: "Hackathons entered" },
-  { n: 20, s: "+", label: "Core technologies" },
-  { n: 6, s: "mo", label: "Internship experience" },
+  { n: 5, s: "+", label: "Projects completed" },
+  { n: 2, s: "", label: "Hackathons won" },
+  { n: 15, s: "+", label: "Technologies" },
+  { n: 2, s: "", label: "Internships" },
 ];
 
 export function About() {
@@ -44,9 +44,9 @@ export function About() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
           <div className="md:col-span-5">
             <div className="relative">
-              <div className="aspect-[4/5] rounded-sm bg-brand-tint/60 border border-border overflow-hidden relative">
+              <div className="aspect-[4/5] rounded-sm bg-background border border-border overflow-hidden relative">
                 <div className="absolute inset-0 bg-grid opacity-30" />
-                <svg viewBox="0 0 400 500" className="absolute inset-0 h-full w-full text-brand-blue/60">
+                <svg viewBox="0 0 400 500" className="absolute inset-0 h-full w-full text-brand/70">
                   <g fill="none" stroke="currentColor" strokeWidth="1">
                     <path d="M0 100 L120 100 L140 120 L260 120 L280 140 L400 140" />
                     <path d="M0 220 L80 220 L100 240 L220 240 L240 260 L400 260" />
@@ -62,7 +62,7 @@ export function About() {
                 <div className="absolute bottom-6 left-6 right-6">
                   <p className="eyebrow">Based in</p>
                   <p className="font-display text-3xl font-bold mt-1">Tamil Nadu, India</p>
-                  <p className="text-sm text-foreground/70 mt-2">Open to relocation — targeting master's programs & international roles in Germany.</p>
+                  <p className="text-sm text-foreground/70 mt-2">Open to remote collaboration and on-site roles across India and beyond.</p>
                 </div>
               </div>
             </div>
@@ -76,16 +76,17 @@ export function About() {
               transition={{ duration: 0.6 }}
               className="text-xl md:text-2xl leading-relaxed text-foreground/90"
             >
-              I'm a fourth-year Electrical & Electronics Engineering student who moves
-              fluidly between silicon, embedded hardware, and full-stack software.
-              I care about the join between the two — where firmware becomes a product,
-              and where a model becomes something people use.
+              I'm an Electrical & Electronics Engineering student who moves fluidly
+              between silicon, embedded hardware, and full-stack software. I care
+              about the join between the two — where firmware becomes a product,
+              and where a clean interface makes an unforgiving system usable.
             </motion.p>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              Currently a solar engineering intern at Voltaura Technologies, working on
-              real renewable-energy systems. Alongside that, I ship AI-driven products,
-              embedded prototypes and HDL designs — small enough to finish, ambitious
-              enough to teach me something new every time.
+              My focus sits at the intersection of embedded systems, VLSI design,
+              full-stack development, and power & renewable energy. Alongside my
+              internships I ship embedded prototypes, HDL designs, and web
+              platforms — small enough to finish, ambitious enough to teach me
+              something new every time.
             </p>
 
             <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-4 text-sm">
@@ -100,9 +101,9 @@ export function About() {
                 <dd className="text-muted-foreground">Tamil</dd>
               </div>
               <div className="col-span-2">
-                <dt className="eyebrow">Focus Areas</dt>
+                <dt className="eyebrow">Areas of Interest</dt>
                 <dd className="mt-2 flex flex-wrap gap-2">
-                  {["AI / ML", "Embedded Systems", "VLSI", "Power & Renewables", "Full-Stack"].map((f) => (
+                  {["Embedded Systems", "VLSI Design", "Power Systems & Renewable Energy", "Full-Stack Development", "Photography"].map((f) => (
                     <span key={f} className="rounded-full border border-border px-3 py-1 text-xs">
                       {f}
                     </span>
