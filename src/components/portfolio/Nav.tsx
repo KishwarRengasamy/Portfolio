@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 const links = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
-  { id: "work", label: "Work" },
-  { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
+  { id: "experience", label: "Experience" },
+  { id: "work", label: "Projects" },
   { id: "achievements", label: "Achievements" },
   { id: "contact", label: "Contact" },
 ];
@@ -42,8 +42,8 @@ export function Nav() {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "backdrop-blur-xl bg-background/70 border-b border-border/60"
-          : "bg-transparent"
+          ? "bg-background/95 backdrop-blur-md border-b border-border/60"
+          : "bg-background/80"
       }`}
     >
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 h-16 flex items-center justify-between">
