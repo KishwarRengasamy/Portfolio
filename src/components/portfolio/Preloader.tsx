@@ -58,8 +58,10 @@ export function Preloader({ onDone }: { onDone: () => void }) {
           <motion.div
             className="absolute rounded-full"
             style={{
-              width: 400, height: 400,
-              background: "radial-gradient(circle, oklch(0.68 0.196 35 / 0.15) 0%, transparent 70%)",
+              width: 400,
+              height: 400,
+              background:
+                "radial-gradient(circle, oklch(0.68 0.196 35 / 0.15) 0%, transparent 70%)",
             }}
             animate={{ scale: [1, 1.15, 1] }}
             transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}

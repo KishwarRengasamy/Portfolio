@@ -2,11 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Github, Linkedin, FileText, ArrowDown } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const roles = [
-  "Software Engineer",
-  "Embedded Systems Engineer",
-  "VLSI Engineer",
-];
+const roles = ["Software Engineer", "Embedded Systems Engineer", "VLSI Engineer"];
 
 const tags = ["FULL STACK", "EMBEDDED", "VLSI"];
 
@@ -34,7 +30,10 @@ function RoleRotator() {
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-screen pt-28 md:pt-36 pb-20 overflow-hidden bg-noise">
+    <section
+      id="home"
+      className="relative min-h-screen pt-28 md:pt-36 pb-20 overflow-hidden bg-noise"
+    >
       <div className="absolute inset-0 bg-grid opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_78%)]" />
 
       {/* Geometric bracket motif — top right */}
@@ -69,7 +68,6 @@ export function Hero() {
       <div className="relative mx-auto max-w-[1400px] px-6 md:px-10">
         {/* Two-column layout: text left, photo right */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-12 md:gap-8">
-
           {/* LEFT — text content */}
           <div className="flex-1 min-w-0">
             <motion.p
@@ -128,13 +126,26 @@ export function Hero() {
               <a href="#work" className="magnetic-btn bg-foreground text-background hover:bg-brand">
                 View Projects <ArrowUpRight className="h-4 w-4" />
               </a>
-              <a href="#contact" className="magnetic-btn border border-foreground/25 hover:border-foreground text-foreground">
+              <a
+                href="#contact"
+                className="magnetic-btn border border-foreground/25 hover:border-foreground text-foreground"
+              >
                 Let's Talk
               </a>
               <div className="flex items-center gap-2 ml-2">
                 {[
-                  { href: "https://github.com/KishwarRengasamy", icon: Github, label: "GitHub", download: false },
-                  { href: "https://www.linkedin.com/in/kishwar-rengasamy", icon: Linkedin, label: "LinkedIn", download: false },
+                  {
+                    href: "https://github.com/KishwarRengasamy",
+                    icon: Github,
+                    label: "GitHub",
+                    download: false,
+                  },
+                  {
+                    href: "https://www.linkedin.com/in/kishwar-rengasamy",
+                    icon: Linkedin,
+                    label: "LinkedIn",
+                    download: false,
+                  },
                   { href: "/resume.pdf", icon: FileText, label: "Resume", download: true },
                 ].map(({ href, icon: Icon, label, download }) => (
                   <a
@@ -162,7 +173,10 @@ export function Hero() {
           >
             <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80">
               {/* Rotating dashed ring decoration */}
-              <div className="absolute -inset-3 rounded-full border-2 border-dashed border-brand/30 animate-spin" style={{ animationDuration: '18s' }} />
+              <div
+                className="absolute -inset-3 rounded-full border-2 border-dashed border-brand/30 animate-spin"
+                style={{ animationDuration: "18s" }}
+              />
               {/* Solid glow ring */}
               <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-brand/40 via-brand/10 to-transparent blur-sm" />
               {/* Photo */}
@@ -183,7 +197,6 @@ export function Hero() {
               </motion.div>
             </div>
           </motion.div>
-
         </div>
 
         <motion.a
@@ -203,7 +216,13 @@ export function Hero() {
         <div className="flex gap-16 whitespace-nowrap animate-marquee font-display text-3xl md:text-5xl font-semibold uppercase tracking-tight">
           {Array.from({ length: 2 }).map((_, k) => (
             <div key={k} className="flex gap-16 shrink-0">
-              {["Embedded Systems", "VLSI Design", "Full-Stack", "Power & Renewables", "Systems Thinking"].map((w) => (
+              {[
+                "Embedded Systems",
+                "VLSI Design",
+                "Full-Stack",
+                "Power & Renewables",
+                "Systems Thinking",
+              ].map((w) => (
                 <span key={w} className="flex items-center gap-16">
                   <span className="text-foreground/85">{w}</span>
                   <span className="text-brand">✦</span>

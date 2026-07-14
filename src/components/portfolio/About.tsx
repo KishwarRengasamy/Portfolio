@@ -21,7 +21,10 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
     return () => cancelAnimationFrame(raf);
   }, [inView, to]);
   return (
-    <span ref={ref} className="font-display text-5xl md:text-6xl font-bold text-foreground tabular-nums">
+    <span
+      ref={ref}
+      className="font-display text-5xl md:text-6xl font-bold text-foreground tabular-nums"
+    >
       {n}
       <span className="text-brand">{suffix}</span>
     </span>
@@ -39,7 +42,19 @@ export function About() {
   return (
     <section id="about" className="relative pt-6 pb-20 md:pt-8 md:pb-28">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-        <SectionHeader index="01" eyebrow="About" title={<>An engineer who builds<br/>across the full stack — from<br/><span className="text-brand">silicon</span> to interface.</>} />
+        <SectionHeader
+          index="01"
+          eyebrow="About"
+          title={
+            <>
+              An engineer who builds
+              <br />
+              across the full stack — from
+              <br />
+              <span className="text-brand">silicon</span> to interface.
+            </>
+          }
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
           <div className="md:col-span-5">
@@ -62,7 +77,9 @@ export function About() {
                 <div className="absolute bottom-6 left-6 right-6">
                   <p className="eyebrow">Based in</p>
                   <p className="font-display text-3xl font-bold mt-1">Tamil Nadu, India</p>
-                  <p className="text-sm text-foreground/70 mt-2">Open to remote collaboration and on-site roles across India and beyond.</p>
+                  <p className="text-sm text-foreground/70 mt-2">
+                    Open to remote collaboration and on-site roles across India and beyond.
+                  </p>
                 </div>
               </div>
             </div>
@@ -76,17 +93,16 @@ export function About() {
               transition={{ duration: 0.6 }}
               className="text-xl md:text-2xl leading-relaxed text-foreground/90"
             >
-              I'm an Electrical & Electronics Engineering student who moves fluidly
-              between silicon, embedded hardware, and full-stack software. I care
-              about the join between the two — where firmware becomes a product,
-              and where a clean interface makes an unforgiving system usable.
+              I'm an Electrical & Electronics Engineering student who moves fluidly between silicon,
+              embedded hardware, and full-stack software. I care about the join between the two —
+              where firmware becomes a product, and where a clean interface makes an unforgiving
+              system usable.
             </motion.p>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              My focus sits at the intersection of embedded systems, VLSI design,
-              full-stack development, and power & renewable energy. Alongside my
-              internships I ship embedded prototypes, HDL designs, and web
-              platforms — small enough to finish, ambitious enough to teach me
-              something new every time.
+              My focus sits at the intersection of embedded systems, VLSI design, full-stack
+              development, and power & renewable energy. Alongside my internships I ship embedded
+              prototypes, HDL designs, and web platforms — small enough to finish, ambitious enough
+              to teach me something new every time.
             </p>
 
             <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-4 text-sm">
@@ -103,7 +119,13 @@ export function About() {
               <div className="col-span-2">
                 <dt className="eyebrow">Areas of Interest</dt>
                 <dd className="mt-2 flex flex-wrap gap-2">
-                  {["Embedded Systems", "VLSI Design", "Power Systems & Renewable Energy", "Full-Stack Development", "Photography"].map((f) => (
+                  {[
+                    "Embedded Systems",
+                    "VLSI Design",
+                    "Power Systems & Renewable Energy",
+                    "Full-Stack Development",
+                    "Photography",
+                  ].map((f) => (
                     <span key={f} className="rounded-full border border-border px-3 py-1 text-xs">
                       {f}
                     </span>
@@ -118,7 +140,9 @@ export function About() {
           {stats.map((s) => (
             <div key={s.label}>
               <Counter to={s.n} suffix={s.s} />
-              <p className="mt-3 text-sm text-muted-foreground uppercase tracking-widest">{s.label}</p>
+              <p className="mt-3 text-sm text-muted-foreground uppercase tracking-widest">
+                {s.label}
+              </p>
             </div>
           ))}
         </div>

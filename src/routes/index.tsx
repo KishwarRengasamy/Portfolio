@@ -12,9 +12,9 @@ import { Preloader } from "@/components/portfolio/Preloader";
 import { SectionDivider } from "@/components/portfolio/SectionDivider";
 import { motion, AnimatePresence } from "framer-motion";
 
-export const Route = createFileRoute("/")(({
+export const Route = createFileRoute("/")({
   component: Index,
-}));
+});
 
 function Index() {
   const [ready, setReady] = useState(false);

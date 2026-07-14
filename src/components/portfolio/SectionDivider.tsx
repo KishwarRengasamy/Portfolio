@@ -9,9 +9,30 @@ import { useRef } from "react";
 type DividerVariant = "ticker" | "slash" | "dots";
 
 const tickerWords = [
-  "Design",  "·",  "Embedded",  "·",  "AI",  "·",  "Full-Stack",  "·",
-  "Silicon",  "·",  "Software",  "·",  "VLSI",  "·",  "React",  "·",
-  "ESP32",  "·",  "TinyML",  "·",  "Cloud",  "·",  "Open-Source",  "·",
+  "Design",
+  "·",
+  "Embedded",
+  "·",
+  "AI",
+  "·",
+  "Full-Stack",
+  "·",
+  "Silicon",
+  "·",
+  "Software",
+  "·",
+  "VLSI",
+  "·",
+  "React",
+  "·",
+  "ESP32",
+  "·",
+  "TinyML",
+  "·",
+  "Cloud",
+  "·",
+  "Open-Source",
+  "·",
 ];
 
 function TickerDivider() {
@@ -108,8 +129,9 @@ function DotsDivider() {
           key={i}
           className="rounded-full"
           style={{
-            background: i === Math.floor(DOT_COUNT / 2) ? "oklch(0.68 0.196 35)" : "oklch(0.87 0.005 90)",
-            width:  i === Math.floor(DOT_COUNT / 2) ? 8 : i % 2 === 0 ? 5 : 3,
+            background:
+              i === Math.floor(DOT_COUNT / 2) ? "oklch(0.68 0.196 35)" : "oklch(0.87 0.005 90)",
+            width: i === Math.floor(DOT_COUNT / 2) ? 8 : i % 2 === 0 ? 5 : 3,
             height: i === Math.floor(DOT_COUNT / 2) ? 8 : i % 2 === 0 ? 5 : 3,
           }}
           initial={{ opacity: 0, scale: 0 }}
@@ -121,11 +143,7 @@ function DotsDivider() {
             stiffness: 400,
           }}
           whileInView={
-            inView
-              ? i === Math.floor(DOT_COUNT / 2)
-                ? { scale: [1, 1.4, 1] }
-                : {}
-              : {}
+            inView ? (i === Math.floor(DOT_COUNT / 2) ? { scale: [1, 1.4, 1] } : {}) : {}
           }
         />
       ))}
@@ -141,6 +159,6 @@ export function SectionDivider({
   label?: string;
 }) {
   if (variant === "ticker") return <TickerDivider />;
-  if (variant === "slash")  return <SlashDivider label={label ?? "next"} />;
+  if (variant === "slash") return <SlashDivider label={label ?? "next"} />;
   return <DotsDivider />;
 }

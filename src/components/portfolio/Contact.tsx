@@ -1,6 +1,15 @@
 import emailjs from "@emailjs/browser";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Mail, Github, Linkedin, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
+import {
+  ArrowUpRight,
+  Mail,
+  Github,
+  Linkedin,
+  MapPin,
+  Send,
+  CheckCircle2,
+  AlertCircle,
+} from "lucide-react";
 import { useRef, useState } from "react";
 
 /* ─── EmailJS config — pulled from .env, NEVER hardcoded ─
@@ -12,9 +21,9 @@ import { useRef, useState } from "react";
    EmailJS dashboard (Account > API Keys > Allowed Origins).
 ──────────────────────────────────────────────────────── */
 const EJS = {
-  serviceId:  import.meta.env.VITE_EMAILJS_SERVICE_ID  as string,
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID as string,
   templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string,
-  publicKey:  import.meta.env.VITE_EMAILJS_PUBLIC_KEY  as string,
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string,
 };
 
 /* ─── Contact info ───────────────────────────────────── */
@@ -56,9 +65,9 @@ const contactInfo: ContactItem[] = [
 /* ─── Floating background orbs ───────────────────────── */
 function BackgroundOrbs() {
   const orbs = [
-    { color: "#FF5A3620", x: "-5%", y: "0%",  size: 500, dx: 30,  dy: 20,  dur: 16 },
+    { color: "#FF5A3620", x: "-5%", y: "0%", size: 500, dx: 30, dy: 20, dur: 16 },
     { color: "#4274D918", x: "65%", y: "50%", size: 420, dx: -25, dy: -20, dur: 20 },
-    { color: "#FF5A3610", x: "40%", y: "85%", size: 300, dx: 15,  dy: -30, dur: 14 },
+    { color: "#FF5A3610", x: "40%", y: "85%", size: 300, dx: 15, dy: -30, dur: 14 },
   ];
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -67,7 +76,10 @@ function BackgroundOrbs() {
           key={i}
           className="absolute rounded-full"
           style={{
-            left: o.x, top: o.y, width: o.size, height: o.size,
+            left: o.x,
+            top: o.y,
+            width: o.size,
+            height: o.size,
             background: `radial-gradient(circle, ${o.color} 0%, transparent 70%)`,
           }}
           animate={{ x: [0, o.dx, 0], y: [0, o.dy, 0] }}
@@ -80,10 +92,18 @@ function BackgroundOrbs() {
 
 /* ─── Float-label input/textarea ─────────────────────── */
 function Field({
-  label, name, type = "text", textarea = false, value, onChange,
+  label,
+  name,
+  type = "text",
+  textarea = false,
+  value,
+  onChange,
 }: {
-  label: string; name: string; type?: string;
-  textarea?: boolean; value: string;
+  label: string;
+  name: string;
+  type?: string;
+  textarea?: boolean;
+  value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }) {
   const [focused, setFocused] = useState(false);
@@ -96,19 +116,33 @@ function Field({
     <div className="relative">
       {textarea ? (
         <textarea
-          name={name} rows={4} required value={value} onChange={onChange}
-          onFocus={() => setFocused(true)} onBlur={() => setFocused(false)}
+          name={name}
+          rows={4}
+          required
+          value={value}
+          onChange={onChange}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
           className={baseClass}
         />
       ) : (
         <input
-          name={name} type={type} required value={value} onChange={onChange}
-          onFocus={() => setFocused(true)} onBlur={() => setFocused(false)}
+          name={name}
+          type={type}
+          required
+          value={value}
+          onChange={onChange}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
           className={baseClass}
         />
       )}
       <motion.label
-        animate={{ y: floated ? -18 : 0, scale: floated ? 0.78 : 1, color: focused ? "oklch(0.68 0.196 35)" : "oklch(0.42 0.01 260)" }}
+        animate={{
+          y: floated ? -18 : 0,
+          scale: floated ? 0.78 : 1,
+          color: focused ? "oklch(0.68 0.196 35)" : "oklch(0.42 0.01 260)",
+        }}
         transition={{ duration: 0.2 }}
         className="pointer-events-none absolute left-0 top-5 origin-left text-sm font-medium"
       >
@@ -146,23 +180,18 @@ export function Contact() {
     setStatus("loading");
     try {
       const templateParams = {
-        from_name:  fields.name,
+        from_name: fields.name,
         from_email: fields.email,
-        subject:    fields.subject,
-        message:    fields.message,
-        to_name:    "Kishwar Rengasamy",
+        subject: fields.subject,
+        message: fields.message,
+        to_name: "Kishwar Rengasamy",
       };
 
-      await emailjs.send(
-        EJS.serviceId,
-        EJS.templateId,
-        templateParams,
-        EJS.publicKey
-      );
+      await emailjs.send(EJS.serviceId, EJS.templateId, templateParams, EJS.publicKey);
 
       setStatus("success");
       setFields({ name: "", email: "", subject: "", message: "" });
-    } catch (error: any) {
+    } catch (error) {
       console.error("EmailJS Error:", error);
       setStatus("error");
     }
@@ -174,7 +203,6 @@ export function Contact() {
       <div className="absolute inset-0 bg-grid opacity-[0.12] [mask-image:radial-gradient(ellipse_at_center,black,transparent_80%)]" />
 
       <div className="relative mx-auto max-w-[1400px] px-6 md:px-10">
-
         {/* Section label */}
         <motion.p
           initial={{ opacity: 0, x: -12 }}
@@ -195,12 +223,15 @@ export function Contact() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="mt-6 font-display font-bold uppercase leading-[0.92] tracking-[-0.03em] text-foreground text-[clamp(2.4rem,8vw,7rem)]"
         >
-          Let's build<br />something<br /><span className="text-brand">together.</span>
+          Let's build
+          <br />
+          something
+          <br />
+          <span className="text-brand">together.</span>
         </motion.h2>
 
         {/* Body */}
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-
           {/* ── Left: info + links ── */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
@@ -210,8 +241,8 @@ export function Contact() {
             className="lg:col-span-5 space-y-10"
           >
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Whether it's an internship, a research collaboration, or a product
-              idea worth prototyping —{" "}
+              Whether it's an internship, a research collaboration, or a product idea worth
+              prototyping —{" "}
               <motion.span
                 className="text-foreground font-medium"
                 animate={{ opacity: [0.7, 1, 0.7] }}
@@ -224,13 +255,17 @@ export function Contact() {
             {/* ─── Contact rows — salmon icon box design ─── */}
             <div className="mt-6 rounded-2xl overflow-hidden">
               {contactInfo.map((item, i) => {
-
                 /* Icon element rendered inside the salmon box */
                 const iconEl =
-                  item.icon === "mail"    ? <Mail    className="h-[18px] w-[18px]" /> :
-                  item.icon === "github"  ? <Github  className="h-[18px] w-[18px]" /> :
-                  item.icon === "mappin"  ? <MapPin  className="h-[18px] w-[18px]" /> :
-                  item.icon === "linkedin" ? <Linkedin className="h-[18px] w-[18px]" /> : null;
+                  item.icon === "mail" ? (
+                    <Mail className="h-[18px] w-[18px]" />
+                  ) : item.icon === "github" ? (
+                    <Github className="h-[18px] w-[18px]" />
+                  ) : item.icon === "mappin" ? (
+                    <MapPin className="h-[18px] w-[18px]" />
+                  ) : item.icon === "linkedin" ? (
+                    <Linkedin className="h-[18px] w-[18px]" />
+                  ) : null;
 
                 return (
                   <motion.div
@@ -303,7 +338,9 @@ export function Contact() {
                 animate={{ scale: [1, 1.4, 1], opacity: [1, 0.5, 1] }}
                 transition={{ duration: 1.8, repeat: Infinity }}
               />
-              <span className="text-foreground font-medium">Available for internships & collabs</span>
+              <span className="text-foreground font-medium">
+                Available for internships & collabs
+              </span>
             </motion.div>
           </motion.div>
 
@@ -318,22 +355,43 @@ export function Contact() {
             className="lg:col-span-7 space-y-8 bg-background/60 backdrop-blur-sm border border-border rounded-xl p-8 md:p-10"
           >
             {/* Honeypot — bots fill this, humans don't */}
-            <input type="text" name="honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
+            <input
+              type="text"
+              name="honey"
+              tabIndex={-1}
+              autoComplete="off"
+              className="hidden"
+              aria-hidden
+            />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <Field label="Your Name" name="name" value={fields.name} onChange={handleChange} />
-              <Field label="Email Address" name="email" type="email" value={fields.email} onChange={handleChange} />
+              <Field
+                label="Email Address"
+                name="email"
+                type="email"
+                value={fields.email}
+                onChange={handleChange}
+              />
             </div>
 
             <Field label="Subject" name="subject" value={fields.subject} onChange={handleChange} />
-            <Field label="Your Message" name="message" textarea value={fields.message} onChange={handleChange} />
+            <Field
+              label="Your Message"
+              name="message"
+              textarea
+              value={fields.message}
+              onChange={handleChange}
+            />
 
             {/* Status feedback */}
             <AnimatePresence mode="wait">
               {status === "success" && (
                 <motion.div
                   key="success"
-                  initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
                   className="flex items-center gap-3 text-green-600 text-sm font-medium"
                 >
                   <CheckCircle2 className="h-4 w-4 flex-shrink-0" />
@@ -343,7 +401,9 @@ export function Contact() {
               {status === "error" && (
                 <motion.div
                   key="error"
-                  initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
                   className="flex items-center gap-3 text-red-500 text-sm font-medium"
                 >
                   <AlertCircle className="h-4 w-4 flex-shrink-0" />
@@ -370,15 +430,22 @@ export function Contact() {
                   Sending…
                 </>
               ) : status === "success" ? (
-                <><CheckCircle2 className="h-4 w-4" /> Sent — talk soon!</>
+                <>
+                  <CheckCircle2 className="h-4 w-4" /> Sent — talk soon!
+                </>
               ) : (
-                <><Send className="h-4 w-4" /> Send Message</>
+                <>
+                  <Send className="h-4 w-4" /> Send Message
+                </>
               )}
             </motion.button>
 
             <p className="text-[11px] text-muted-foreground text-center">
               Or reach me on{" "}
-              <a href="mailto:kishwarrengasamy216@gmail.com" className="underline underline-offset-2 hover:text-brand transition-colors">
+              <a
+                href="mailto:kishwarrengasamy216@gmail.com"
+                className="underline underline-offset-2 hover:text-brand transition-colors"
+              >
                 kishwarrengasamy216@gmail.com
               </a>
             </p>

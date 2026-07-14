@@ -3,7 +3,7 @@
 ## Supported Versions
 
 | Version | Supported |
-|---------|-----------|
+| ------- | --------- |
 | main    | ✅ Yes    |
 
 ## Reporting a Vulnerability
@@ -15,6 +15,7 @@ Instead, report it privately via email:
 📧 **kishwarrengasamy216@gmail.com**
 
 Include the following in your report:
+
 - A clear description of the vulnerability
 - Steps to reproduce the issue
 - Potential impact assessment

@@ -1,6 +1,7 @@
 <div align="center">
 
 <!-- Typing SVG -->
+
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=700&size=30&pause=1000&color=FF5A36&center=true&vCenter=true&width=600&lines=Hi%2C+I'm+Kishwar+Rengasamy+%F0%9F%91%8B;Designer+%C2%B7+Developer+%C2%B7+Creative;Building+thoughtful+digital+experiences)](https://git.io/typing-svg)
 
 <img src="https://komarev.com/ghpvc/?username=KishwarRengasamy&style=flat-square&color=FF5A36" alt="Profile views" />
@@ -13,13 +14,13 @@
 
 ```typescript
 const kishwar = {
-  name:       "Kishwar Rengasamy",
-  role:       "Designer · Developer · Creative Technologist",
-  location:   "Chennai, India 🇮🇳",
-  currently:  "Building thoughtful digital experiences",
-  learning:   ["Advanced React Patterns", "Motion Design", "AI Integration"],
-  interests:  ["UI/UX", "Open Source", "Creative Coding", "Adobe Creative Suite"],
-  openTo:     "Internships · Research Collaborations · Product Ideas",
+  name: "Kishwar Rengasamy",
+  role: "Designer · Developer · Creative Technologist",
+  location: "Chennai, India 🇮🇳",
+  currently: "Building thoughtful digital experiences",
+  learning: ["Advanced React Patterns", "Motion Design", "AI Integration"],
+  interests: ["UI/UX", "Open Source", "Creative Coding", "Adobe Creative Suite"],
+  openTo: "Internships · Research Collaborations · Product Ideas",
 };
 ```
 
@@ -93,7 +94,7 @@ const kishwar = {
 
 <div align="center">
 
-*"Whether it's an internship, a research collaboration, or a product idea worth prototyping — I read every message."*
+_"Whether it's an internship, a research collaboration, or a product idea worth prototyping — I read every message."_
 
 ⭐ **Open to internships and collaborations!**
 

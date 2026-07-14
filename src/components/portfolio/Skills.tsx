@@ -8,11 +8,11 @@ import { SectionHeader } from "./SectionHeader";
 ───────────────────────────────────────────────────────────── */
 type Skill = {
   name: string;
-  slug: string;           // simpleicons.org slug (used when localIcon is absent)
-  iconColor: string;      // brand hex without #
-  bg: string;             // card accent bg (with opacity)
+  slug: string; // simpleicons.org slug (used when localIcon is absent)
+  iconColor: string; // brand hex without #
+  bg: string; // card accent bg (with opacity)
   category: "Languages" | "Frameworks & Libraries" | "Others";
-  localIcon?: string;     // path to a local public image (overrides CDN)
+  localIcon?: string; // path to a local public image (overrides CDN)
 };
 
 const skills: Skill[] = [
@@ -204,15 +204,7 @@ function SkillCard({ skill, index }: { skill: Skill; index: number }) {
 /* ─────────────────────────────────────────────────────────────
    Category pill button
 ───────────────────────────────────────────────────────────── */
-function Tab({
-  label,
-  active,
-  onClick,
-}: {
-  label: string;
-  active: boolean;
-  onClick: () => void;
-}) {
+function Tab({ label, active, onClick }: { label: string; active: boolean; onClick: () => void }) {
   return (
     <button
       onClick={onClick}
@@ -241,9 +233,7 @@ export function Skills() {
   const [activeCategory, setActiveCategory] = useState<Category>("All");
 
   const visible =
-    activeCategory === "All"
-      ? skills
-      : skills.filter((s) => s.category === activeCategory);
+    activeCategory === "All" ? skills : skills.filter((s) => s.category === activeCategory);
 
   return (
     <section id="skills" className="relative pt-6 pb-20 md:pt-8 md:pb-28">
@@ -253,10 +243,16 @@ export function Skills() {
         <SectionHeader
           index="03"
           eyebrow="Technology Stack"
-          title={<>A toolkit built for<br />the whole stack.</>}
+          title={
+            <>
+              A toolkit built for
+              <br />
+              the whole stack.
+            </>
+          }
         >
-          Tools I actually reach for — grouped by where they live in my workflow,
-          not by how impressive the logo looks in a grid.
+          Tools I actually reach for — grouped by where they live in my workflow, not by how
+          impressive the logo looks in a grid.
         </SectionHeader>
 
         {/* Category tabs */}

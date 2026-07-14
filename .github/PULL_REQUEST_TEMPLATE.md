@@ -16,16 +16,17 @@
 ## Changes Made
 
 <!-- List the key changes in bullet points -->
-- 
-- 
-- 
+
+-
+-
+-
 
 ## Screenshots
 
 <!-- For UI changes, add before/after screenshots -->
 
 | Before | After |
-|--------|-------|
+| ------ | ----- |
 | ...    | ...   |
 
 ## Testing

@@ -37,7 +37,6 @@ export function Nav() {
     return () => window.removeEventListener("scroll", updateActive);
   }, []);
 
-
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
@@ -47,13 +46,13 @@ export function Nav() {
       }`}
     >
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 h-16 flex items-center justify-between">
-        <a href="#home" className="group flex items-center gap-2" aria-label="Kishwar Rengasamy home">
+        <a
+          href="#home"
+          className="group flex items-center gap-2"
+          aria-label="Kishwar Rengasamy home"
+        >
           <span className="relative inline-flex h-9 w-9 items-center justify-center">
-            <img
-              src="/rk_logo.png"
-              alt="RK"
-              className="h-8 w-8 object-contain select-none"
-            />
+            <img src="/rk_logo.png" alt="RK" className="h-8 w-8 object-contain select-none" />
             <span className="absolute -bottom-1 -right-1 h-1.5 w-1.5 rounded-full bg-brand animate-pulse-dot" />
           </span>
         </a>

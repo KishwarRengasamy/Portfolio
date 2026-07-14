@@ -20,7 +20,12 @@ const items = [
     org: "ZO House, Bengaluru",
     year: "2025 · 1st Place",
     body: "Secured 1st Place for developing Blockchat AI, an intelligent crypto assistant that integrates GPT-3.5 Turbo, Gemini 1.5 Pro, and the CoinGecko API to provide real-time cryptocurrency prices, AI-driven trading recommendations, and transaction validation through a conversational interface.",
-    bodyHighlights: ["1st Place", "GPT-3.5 Turbo", "Gemini 1.5 Pro", "real-time cryptocurrency prices"],
+    bodyHighlights: [
+      "1st Place",
+      "GPT-3.5 Turbo",
+      "Gemini 1.5 Pro",
+      "real-time cryptocurrency prices",
+    ],
     stack: ["Python", "GPT-3.5 Turbo", "Gemini 1.5 Pro", "CoinGecko API"],
     emoji: "🤖",
     funFact: "built & deployed in 24h",
@@ -30,9 +35,9 @@ const items = [
 /* ─── Floating orbs background ───────────────────────── */
 function BackgroundOrbs() {
   const orbs = [
-    { color: "#FFD43B1A", x: "0%",  y: "0%",  size: 500, dx: 30,  dy: 20,  dur: 16 },
-    { color: "#FF5A361A", x: "60%", y: "40%", size: 400, dx: -25, dy: 30,  dur: 20 },
-    { color: "#FFD43B0E", x: "30%", y: "70%", size: 350, dx: 20,  dy: -20, dur: 13 },
+    { color: "#FFD43B1A", x: "0%", y: "0%", size: 500, dx: 30, dy: 20, dur: 16 },
+    { color: "#FF5A361A", x: "60%", y: "40%", size: 400, dx: -25, dy: 30, dur: 20 },
+    { color: "#FFD43B0E", x: "30%", y: "70%", size: 350, dx: 20, dy: -20, dur: 13 },
   ];
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -41,7 +46,10 @@ function BackgroundOrbs() {
           key={i}
           className="absolute rounded-full"
           style={{
-            left: o.x, top: o.y, width: o.size, height: o.size,
+            left: o.x,
+            top: o.y,
+            width: o.size,
+            height: o.size,
             background: `radial-gradient(circle, ${o.color} 0%, transparent 70%)`,
           }}
           animate={{ x: [0, o.dx, 0], y: [0, o.dy, 0] }}
@@ -100,7 +108,12 @@ function FloatingEmoji({ active }: { active: boolean }) {
               bottom: "10%",
             }}
             initial={{ opacity: 0, y: 0, scale: 0.4 }}
-            animate={{ opacity: [0, 1, 1, 0], y: -80, scale: [0.4, 1.2, 1, 0.6], rotate: [0, 10, -10, 5] }}
+            animate={{
+              opacity: [0, 1, 1, 0],
+              y: -80,
+              scale: [0.4, 1.2, 1, 0.6],
+              rotate: [0, 10, -10, 5],
+            }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.4, delay: i * 0.1, ease: "easeOut" }}
           >
@@ -269,7 +282,17 @@ export function Achievements() {
       <div className="absolute inset-0 bg-grid opacity-[0.12] [mask-image:radial-gradient(ellipse_at_center,black,transparent_80%)]" />
 
       <div className="relative mx-auto max-w-[1400px] px-6 md:px-10">
-        <SectionHeader index="05" eyebrow="Achievements" title={<>Receipts.<br />Not resumé filler.</>} />
+        <SectionHeader
+          index="05"
+          eyebrow="Achievements"
+          title={
+            <>
+              Receipts.
+              <br />
+              Not resumé filler.
+            </>
+          }
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {items.map((it, i) => (
