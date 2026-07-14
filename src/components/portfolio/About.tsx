@@ -37,7 +37,7 @@ const stats = [
 
 export function About() {
   return (
-    <section id="about" className="relative py-28 md:py-40">
+    <section id="about" className="relative pt-6 pb-20 md:pt-8 md:pb-28">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
         <SectionHeader index="01" eyebrow="About" title={<>An engineer who builds<br/>across the full stack — from<br/><span className="text-brand">silicon</span> to interface.</>} />
 

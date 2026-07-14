@@ -232,3 +232,10 @@
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee, .animate-drift, .animate-pulse-dot { animation: none !important; }
 }
+
+/* ==== Scroll offset for fixed navbar (64px = 4rem) ==== */
+section[id] {
+  scroll-margin-top: 4rem; /* exactly the navbar h-16 height */
+}
+
+

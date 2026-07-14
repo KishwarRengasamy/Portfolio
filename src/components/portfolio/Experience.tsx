@@ -22,7 +22,7 @@ const items = [
 
 export function Experience() {
   return (
-    <section id="experience" className="relative py-28 md:py-40">
+    <section id="experience" className="relative pt-6 pb-20 md:pt-8 md:pb-28">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
         <SectionHeader index="04" eyebrow="Experience" title={<>Where I've been<br/>plugged in.</>} />
 
